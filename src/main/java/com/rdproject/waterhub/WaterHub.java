@@ -1,6 +1,5 @@
 package com.rdproject.waterhub;
 
-import lombok.*;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.*;
 import net.md_5.bungee.config.*;
@@ -9,9 +8,8 @@ import java.io.*;
 import java.nio.file.*;
 
 @SuppressWarnings("ALL")
-public final class WaterHub extends Plugin {
+public class WaterHub extends Plugin {
 
-    @Getter
     public static Configuration cg;
     private static WaterHub plugin;
     public static final String DEV = "ArtemYTO";
@@ -28,9 +26,9 @@ public final class WaterHub extends Plugin {
         new Metrics(this, 14208);
         plugin = this;
 
+        LoadListeners();
         getConfigs();
         LoadConfigs();
-        LoadListeners();
         getLogger().info(STARTUP_MESSAGE);
 
         UpdateChecker updateChecker = new UpdateChecker(this, 99826);
@@ -80,8 +78,6 @@ public final class WaterHub extends Plugin {
 
     public void LoadListeners() {
         ProxyServer.getInstance().getPluginManager().registerListener(this, new HubCommand());
-        ProxyServer.getInstance().getPluginManager().registerListener(this, new HubAuthor());
-        ProxyServer.getInstance().getPluginManager().registerListener(this, new HubReload());
     }
 
     public static WaterHub getInstance() {
