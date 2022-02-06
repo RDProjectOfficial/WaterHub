@@ -33,7 +33,7 @@ public final class WaterHub extends Plugin {
         LoadListeners();
         getLogger().info(STARTUP_MESSAGE);
 
-        UpdateChecker updateChecker = new UpdateChecker(this, 14208);
+        UpdateChecker updateChecker = new UpdateChecker(this, 99826);
         try {
             if (updateChecker.checkForUpdates()) {
                 getLogger().info(LIST);
