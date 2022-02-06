@@ -7,14 +7,14 @@ How to use:
 
 Commands:
 
-    • /hubsystem - Shows the Author of Plugin (RDProject)
-    • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
-		• /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
+        • /hubsystem - Shows the Author of Plugin (RDProject)
+        • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
+	• /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
 						
-Features
+Features:
 
-		• BungeeCord Plugin
-		• Flexible Configuration.
-		• Support WaterFall, BungeeCord.
-		• All Customizable.
-		• Lightweight and minimal performance impact.
+	• BungeeCord Plugin
+	• Flexible Configuration.
+	• Support WaterFall, BungeeCord.
+	• All Customizable.
+	• Lightweight and minimal performance impact.
