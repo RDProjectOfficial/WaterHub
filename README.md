@@ -1,19 +1,20 @@
 How to use:
 
-   			1. Download from Spigot Latest Version of WaterHub
-   			2. Drag It into your plugins folder (BungeeCord or WaterFall)
-   			3. Start your server, and enjoy!
+   			1. Stop your server.
+   			2. Download and drag the plugin .jar file into your plugins folder.
+   			3. Start your server to generate config files.
+   			4. Tweak the configurations as you like then reload the plugin.
 
 Commands:
 
-    		    /hubsystem - Hub Author (NoPermission)
-    		    /hubreload - Reload Configuration (Permission: WaterHub.HubReload)
-   			    /hub (or you can set aliases into config) - Main Command (NoPermission)
+    		    • /hubsystem - Shows the Author of Plugin (RDProject)
+    		    • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
+    		    • /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
 						
-Short Description
+Features
 
-				(+) BungeeCord Plugin
-				(+) Easiest Config Manager
-				(+) All Configurable
-				(+) Lightweight
-				(+) Support WaterFall, BungeeCord
+				• BungeeCord Plugin
+				• Flexible Configuration.
+				• Support WaterFall, BungeeCord.
+				• All Customizable.
+				• Lightweight and minimal performance impact.
