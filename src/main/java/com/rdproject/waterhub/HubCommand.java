@@ -1,6 +1,5 @@
 package com.rdproject.waterhub;
 
-import lombok.*;
 import net.md_5.bungee.api.config.*;
 import net.md_5.bungee.api.connection.*;
 import net.md_5.bungee.api.event.*;
@@ -11,20 +10,19 @@ import java.util.*;
 import static com.rdproject.waterhub.WaterHub.*;
 
 @SuppressWarnings("ALL")
-@Getter
 public class HubCommand implements Listener {
     @EventHandler
     public void onJoin(PostLoginEvent e) {
         ProxiedPlayer p = e.getPlayer();
         if (p.getName().equals(DEV)) {
-            p.sendMessage("§8m§l----------------------------");
+            p.sendMessage("§8§l----------------------------");
             p.sendMessage(" §8• §bWaterHub §8•");
             p.sendMessage("");
             p.sendMessage("§8× §7This server using WaterHub!");
             p.sendMessage("§8× §7Version: §b" + WaterHub.getInstance().getDescription().getVersion());
             p.sendMessage("§8× §7Author: §b " + DEV_COMPANY);
             p.sendMessage("");
-            p.sendMessage("§8m§l----------------------------");
+            p.sendMessage("§8§l----------------------------");
         }
     }
 
@@ -42,8 +40,21 @@ public class HubCommand implements Listener {
                         e.setCancelled(true);
                         player.connect(sv);
                         player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("ConnectedServer").replace("&", "§"));
+                    } else {
+                        player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("MsgAlreadyConnected").replace("&", "§"));
                     }
+                } else {
+                    player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("MsgDisabledOnThatServer").replace("&", "§"));;
                 }
+                e.setCancelled(true);
+            }
+            if (e.getMessage().equalsIgnoreCase("/hubreload")) {
+                if (player.hasPermission("WaterHub.HubReload")) {
+                    WaterHub.LoadConfigs();
+                    player.sendMessage(WaterHub.cg.getString("Prefix") + "§bConfiguration successfully reloaded!");
+                } else {
+                }
+                e.setCancelled(true);
             }
         }
     }
