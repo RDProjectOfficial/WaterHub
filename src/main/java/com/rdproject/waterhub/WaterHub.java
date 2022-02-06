@@ -19,7 +19,7 @@ public class WaterHub extends Plugin {
     public static final String STARTUP_MESSAGE = "\n" + " \\ \\        /       |                |   |         |     \n" +
             "  \\ \\  \\   /  _` |  __|   _ \\   __|  |   |  |   |  __ \\  \n" +
             "   \\ \\  \\ /  (   |  |     __/  |     ___ |  |   |  |   | \n" +
-            "    \\_/\\_/  \\__,_| \\__| \\___| _|    _|  _| \\__,_| _.__/" + " Version 1.0";
+            "    \\_/\\_/  \\__,_| \\__| \\___| _|    _|  _| \\__,_| _.__/" + " Version 1.0-HOTFIX";
 
     @Override
     public void onEnable() {
