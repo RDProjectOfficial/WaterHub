@@ -1,0 +1,29 @@
+# ░██╗░░░░░░░██╗░█████╗░████████╗███████╗██████╗░██╗░░██╗██╗░░░██╗██████╗░
+# ░██║░░██╗░░██║██╔══██╗╚══██╔══╝██╔════╝██╔══██╗██║░░██║██║░░░██║██╔══██╗
+# ░╚██╗████╗██╔╝███████║░░░██║░░░█████╗░░██████╔╝███████║██║░░░██║██████╦╝
+# ░░████╔═████║░██╔══██║░░░██║░░░██╔══╝░░██╔══██╗██╔══██║██║░░░██║██╔══██╗
+# ░░╚██╔╝░╚██╔╝░██║░░██║░░░██║░░░███████╗██║░░██║██║░░██║╚██████╔╝██████╦╝
+# ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═════╝░
+
+#WaterHub - BungeeCord Hub System
+#Support - https://github.com/RDProjectOfficial
+
+#Settings
+Prefix: "§8• §bWaterHub §8× "
+
+#Messages
+ConnectedServer: '§bYou are connecting to the Lobby...'
+MsgAlreadyConnected: '§bYou are Already Connected to the Lobby!'
+MsgDisabledOnThatServer: '§bThis command Disabled on that Server!'
+
+#The Hub Server (Lobby)
+LobbyServer: lobby
+
+#List of Aliases, you can create besides /hub
+Aliases-Hub:
+  - /lobby
+  - /hub
+
+#DisabledServer, that is servers which disabled that commands
+DisabledServers:
+  - 'lobby'
