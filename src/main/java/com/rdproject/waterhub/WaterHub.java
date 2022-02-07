@@ -14,7 +14,7 @@ public class WaterHub extends Plugin {
     private static WaterHub plugin;
     public static final String DEV = "ArtemYTO";
     public static final String DEV_COMPANY = "RDProject";
-    public static final String VERSION = "1.1-HOTFIX";
+    public static final String VERSION = "1.2-HOTFIX";
     public static final String PLUGIN_NAME = "WaterHub";
     public static final String LIST = "§8§l----------------------------";
     public static final String STARTUP_MESSAGE = "\n" + " \\ \\        /       |                |   |         |     \n" +
