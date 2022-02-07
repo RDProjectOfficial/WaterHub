@@ -6,7 +6,7 @@
 
     <groupId>com.rdproject.waterhub</groupId>
     <artifactId>WaterHub</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-HOTFIX</version>
     <packaging>jar</packaging>
 
     <name>WaterHub</name>

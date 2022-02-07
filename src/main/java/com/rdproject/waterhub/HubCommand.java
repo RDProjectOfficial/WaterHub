@@ -19,7 +19,7 @@ public class HubCommand implements Listener {
             p.sendMessage(" §8• §bWaterHub §8•");
             p.sendMessage("");
             p.sendMessage("§8× §7This server using WaterHub!");
-            p.sendMessage("§8× §7Version: §b" + WaterHub.getInstance().getDescription().getVersion());
+            p.sendMessage("§8× §7Version: §b" + VERSION);
             p.sendMessage("§8× §7Author: §b " + DEV_COMPANY);
             p.sendMessage("");
             p.sendMessage("§8§l----------------------------");
