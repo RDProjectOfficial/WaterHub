@@ -47,16 +47,14 @@ public class HubCommand implements Listener {
                     player.sendMessage(cg.getString("Prefix") + cg.getString("MsgDisabledOnThatServer").replace("&", "§"));;
                 }
                 e.setCancelled(true);
-                player.sendMessage(cg.getString("Prefix") + cg.getString("NoPermission"));
             }
             if (e.getMessage().equalsIgnoreCase("/hubreload")) {
                 if (player.hasPermission("WaterHub.HubReload")) {
-                    WaterHub.LoadConfigs();
+                    LoadConfigs();
                     player.sendMessage(cg.getString("Prefix") + "§bConfiguration successfully reloaded!");
                 } else {
-                    e.setCancelled(true);
-                    player.sendMessage(cg.getString("Prefix") + cg.getString("NoPermission"));
                 }
+                e.setCancelled(true);
             }
         }
     }
