@@ -30,31 +30,33 @@ public class HubCommand implements Listener {
     public void onChat(ChatEvent e) {
         if (e.isCommand()) {
             ProxiedPlayer player = (ProxiedPlayer) e.getSender();
-            List<String> commands = WaterHub.cg.getStringList("Aliases-Hub");
-            List<String> denyServers = WaterHub.cg.getStringList("DisabledServers");
-            String lobbyServer = WaterHub.cg.getString("LobbyServer");
+            List<String> commands = cg.getStringList("Aliases-Hub");
+            List<String> denyServers = cg.getStringList("DisabledServers");
+            String lobbyServer = cg.getString("LobbyServer");
             ServerInfo sv = WaterHub.getInstance().getProxy().getServerInfo(lobbyServer);
             if (commands.contains(e.getMessage())) {
                 if (!denyServers.contains(player.getServer().getInfo().getName())) {
                     if (!player.getServer().getInfo().getName().equals(lobbyServer)) {
                         e.setCancelled(true);
                         player.connect(sv);
-                        player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("ConnectedServer").replace("&", "§"));
+                        player.sendMessage(cg.getString("Prefix") + cg.getString("ConnectedServer").replace("&", "§"));
                     } else {
-                        player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("MsgAlreadyConnected").replace("&", "§"));
+                        player.sendMessage(cg.getString("Prefix") + cg.getString("MsgAlreadyConnected").replace("&", "§"));
                     }
                 } else {
-                    player.sendMessage(WaterHub.cg.getString("Prefix") + WaterHub.cg.getString("MsgDisabledOnThatServer").replace("&", "§"));;
+                    player.sendMessage(cg.getString("Prefix") + cg.getString("MsgDisabledOnThatServer").replace("&", "§"));;
                 }
                 e.setCancelled(true);
+                player.sendMessage(cg.getString("Prefix") + cg.getString("NoPermission"));
             }
             if (e.getMessage().equalsIgnoreCase("/hubreload")) {
                 if (player.hasPermission("WaterHub.HubReload")) {
                     WaterHub.LoadConfigs();
-                    player.sendMessage(WaterHub.cg.getString("Prefix") + "§bConfiguration successfully reloaded!");
+                    player.sendMessage(cg.getString("Prefix") + "§bConfiguration successfully reloaded!");
                 } else {
+                    e.setCancelled(true);
+                    player.sendMessage(cg.getString("Prefix") + cg.getString("NoPermission"));
                 }
-                e.setCancelled(true);
             }
         }
     }

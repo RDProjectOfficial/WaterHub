@@ -10,6 +10,7 @@
 
 #Settings
 Prefix: "§8• §bWaterHub §8× "
+NoPermission: "§bYou do not have permission!"
 
 #Messages
 ConnectedServer: '§bYou are connecting to the Lobby...'
