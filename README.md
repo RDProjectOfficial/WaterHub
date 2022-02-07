@@ -7,7 +7,6 @@ How to use:
 
 Commands:
 
-        • /hubsystem - Shows the Author of Plugin (RDProject)
         • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
 	• /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
 						
