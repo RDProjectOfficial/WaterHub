@@ -7,7 +7,7 @@ How to use:
 
 Commands:
 
-        • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
+    • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
 	• /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
 						
 Features:
