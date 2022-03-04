@@ -1,6 +1,6 @@
 name: WaterHub
-main: com.rdproject.waterhub.WaterHub
-version: 1.3-HOTFIX
+main: com.rdproject.WaterHub
+version: 1.6-RELEASE
 author: RDProject
 description: Useful Hub System
 website: https://github.com/RDProjectOfficial

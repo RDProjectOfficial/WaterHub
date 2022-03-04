@@ -1,4 +1,4 @@
-package com.rdproject.waterhub.utils;
+package com.rdproject.util;
 
 import java.io.*;
 import java.net.*;

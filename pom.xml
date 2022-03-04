@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.rdproject.waterhub</groupId>
+    <groupId>com.rdproject</groupId>
     <artifactId>WaterHub</artifactId>
-    <version>1.3-HOTFIX</version>
+    <version>1.6-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>WaterHub</name>
 
-    <description>Useful Hub System</description>
+    <description>Hub System</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,11 +56,7 @@
 
     <repositories>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>papermc-repo</id>
+            <id>paper-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
     </repositories>
@@ -75,7 +71,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
+            <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

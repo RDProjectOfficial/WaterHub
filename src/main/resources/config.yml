@@ -5,27 +5,40 @@
 # ░░╚██╔╝░╚██╔╝░██║░░██║░░░██║░░░███████╗██║░░██║██║░░██║╚██████╔╝██████╦╝
 # ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═════╝░
 
-#WaterHub - BungeeCord Hub System
-#Support - https://github.com/RDProjectOfficial
+# WaterHub - BungeeCord Hub System
+# Support - https://github.com/RDProjectOfficial
 
-#Settings
-Prefix: "§8• §bWaterHub §8× "
-NoPermission: "§bYou do not have permission!"
-Config-Reloaded: "§bConfiguration successfully reloaded!"
+# Settings
+prefix: "§8• §bWaterHub §8× "
+no-permission: "§bYou do not have permission!"
+config-reloaded: "§bConfiguration successfully reloaded!"
+permission-reload: "WaterHub.HubReload"
+check-updates: true
 
-#Messages
-ConnectedServer: '§bYou are connecting to the Lobby...'
-MsgAlreadyConnected: '§bYou are Already Connected to the Lobby!'
-MsgDisabledOnThatServer: '§bThis command Disabled on that Server!'
+# Messages
+connected-server: '§bYou are connecting to the Lobby...'
+connected-server-random: '§bYou are connecting to the Random Lobby...'
+already-connected: '§bYou are Already Connected to the Lobby!'
+disabled-on-that-server: '§bThis command Disabled on that Server!'
+server-is-null: '§bServer is null! Try again!'
 
-#The Hub Server (Lobby)
-LobbyServer: lobby
+# The Hub Server (Lobby) (Works only if random.toggle = false)
+lobby-server: "lobby"
 
-#List of Aliases, you can create besides /hub
-Aliases-Hub:
+# Random Module
+random:
+  toggle: false
+  lobby-server:
+    - "lobby"
+    - "lobby1"
+    # - "lobby2"
+    # - "lobby3"
+
+# List of Aliases, you can create besides /hub
+aliases-hub:
   - /lobby
   - /hub
 
-#DisabledServer, that is servers which disabled that commands
-DisabledServers:
-  - 'lobby'
+# DisabledServer, that is servers which disabled that commands
+disabled-server:
+  - ''
