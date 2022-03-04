@@ -17,8 +17,8 @@ public class ConstantsUtil {
             "   \\ \\  \\ /  (   |  |     __/  |     ___ |  |   |  |   | \n" +
             "    \\_/\\_/  \\__,_| \\__| \\___| _|    _|  _| \\__,_| _.__/" + " Version " + VERSION;
 
-    public static String PREFIX = cg.getString("Prefix");
-    public static String NOPERM = cg.getString("Prefix") + cg.getString("NoPermission");
+    public static String PREFIX;
+    public static String NOPERM;
 
     public static TextComponent formatComponent(String message) {
         return new TextComponent(ChatColor.translateAlternateColorCodes('&', message));

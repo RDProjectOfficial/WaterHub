@@ -14,6 +14,28 @@ import static com.rdproject.waterhub.utils.ConstantsUtil.*;
 @Log
 public class LoaderUtil {
 
+    public static void GetConfig() {
+        if (!plugin.getDataFolder().exists())
+            plugin.getDataFolder().mkdir();
+        File file = new File(plugin.getDataFolder(), "config.yml");
+        if (!file.exists())
+            try {
+                InputStream in = plugin.getResourceAsStream("config.yml");
+                Files.copy(in, file.toPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+    public static void LoadConfig() {
+        try {
+            cg = ConfigurationProvider.getProvider(YamlConfiguration.class)
+                    .load(new File(plugin.getDataFolder(), "config.yml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void LoadUtils() {
         new Metrics(plugin, 14208);
         UpdateChecker updateChecker = new UpdateChecker(plugin, 99826);
@@ -46,28 +68,8 @@ public class LoaderUtil {
     public static void LoadListeners() {
         PluginManager pm = ProxyServer.getInstance().getPluginManager();
         pm.registerListener(plugin, new HubListener());
-    }
-
-    public static void GetConfig() {
-        if (!plugin.getDataFolder().exists())
-            plugin.getDataFolder().mkdir();
-        File file = new File(plugin.getDataFolder(), "config.yml");
-        if (!file.exists())
-            try {
-                InputStream in = plugin.getResourceAsStream("config.yml");
-                Files.copy(in, file.toPath());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-    }
-
-    public static void LoadConfig() {
-        try {
-            cg = ConfigurationProvider.getProvider(YamlConfiguration.class)
-                    .load(new File(plugin.getDataFolder(), "config.yml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        NOPERM = cg.getString("Prefix") + cg.getString("NoPermission");
+        PREFIX = cg.getString("Prefix");
     }
 
     public static void LoadCommands() {
