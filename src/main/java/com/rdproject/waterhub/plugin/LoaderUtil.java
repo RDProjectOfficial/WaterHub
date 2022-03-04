@@ -38,26 +38,29 @@ public class LoaderUtil {
 
     public static void LoadUtils() {
         new Metrics(plugin, 14208);
-        UpdateChecker updateChecker = new UpdateChecker(plugin, 99826);
-        try {
-            if (updateChecker.checkForUpdates()) {
-                log.info(LIST);
-                log.info("    §8• §bWaterHub §8•");
-                log.info("");
-                log.info("§8× §7Update Available!");
-                log.info("§8× §7Download it from Spigot!");
-                log.info("");
-                log.info(LIST);
-            } else  {
-                log.info(LIST);
-                log.info("    §8• §bWaterHub §8•");
-                log.info("");
-                log.info("§8× §7You are using the Latest Version!");
-                log.info("");
-                log.info(LIST);
+        Boolean checkupdates = cg.getBoolean("Check-Updates");
+        if (Boolean.TRUE.equals(checkupdates)) {
+            UpdateChecker updateChecker = new UpdateChecker(plugin, 99826);
+            try {
+                if (updateChecker.checkForUpdates()) {
+                    log.info(LIST);
+                    log.info("    §8• §bWaterHub §8•");
+                    log.info("");
+                    log.info("§8× §7Update Available!");
+                    log.info("§8× §7Download it from Spigot!");
+                    log.info("");
+                    log.info(LIST);
+                } else {
+                    log.info(LIST);
+                    log.info("    §8• §bWaterHub §8•");
+                    log.info("");
+                    log.info("§8× §7You are using the Latest Version!");
+                    log.info("");
+                    log.info(LIST);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

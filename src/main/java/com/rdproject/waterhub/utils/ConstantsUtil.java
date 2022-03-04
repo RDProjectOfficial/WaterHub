@@ -10,7 +10,7 @@ public class ConstantsUtil {
 
     public static Configuration cg;
     public static @Getter WaterHub plugin;
-    public static final String VERSION = "1.3-HOTFIX";
+    public static final String VERSION = "1.4-HOTFIX";
     public static final String LIST = "§8§l----------------------------";
     public static final String STARTUP_MESSAGE = "\n" + " \\ \\        /       |                |   |         |     \n" +
             "  \\ \\  \\   /  _` |  __|   _ \\   __|  |   |  |   |  __ \\  \n" +

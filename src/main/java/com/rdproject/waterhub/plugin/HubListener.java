@@ -27,12 +27,12 @@ public class HubListener implements Listener {
                     if (!player.getServer().getInfo().getName().equals(lobbyServer)) {
                         e.setCancelled(true);
                         player.connect(sv);
-                        player.sendMessage(formatComponent(PREFIX + Connected.replace("&", "§")));
+                        player.sendMessage(formatComponent(PREFIX + Connected));
                     } else {
-                        player.sendMessage(formatComponent(PREFIX + MSGAlreadyCon.replace("&", "§")));
+                        player.sendMessage(formatComponent(PREFIX + MSGAlreadyCon));
                     }
                 } else {
-                    player.sendMessage(formatComponent(PREFIX + MSGDisServer.replace("&", "§")));
+                    player.sendMessage(formatComponent(PREFIX + MSGDisServer));
                 }
                 e.setCancelled(true);
             }
