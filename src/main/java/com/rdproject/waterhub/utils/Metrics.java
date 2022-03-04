@@ -1,4 +1,4 @@
-package com.rdproject.waterhub;
+package com.rdproject.waterhub.utils;
 
 import java.io.*;
 import java.net.*;
@@ -13,7 +13,6 @@ import javax.net.ssl.*;
 import net.md_5.bungee.api.plugin.*;
 import net.md_5.bungee.config.*;
 
-@SuppressWarnings("ALL")
 public class Metrics {
 
     private final Plugin plugin;

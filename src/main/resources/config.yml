@@ -11,6 +11,7 @@
 #Settings
 Prefix: "§8• §bWaterHub §8× "
 NoPermission: "§bYou do not have permission!"
+Config-Reloaded: "§bConfiguration successfully reloaded!"
 
 #Messages
 ConnectedServer: '§bYou are connecting to the Lobby...'

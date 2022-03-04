@@ -1,10 +1,9 @@
-package com.rdproject.waterhub;
+package com.rdproject.waterhub.utils;
 
 import java.io.*;
 import java.net.*;
 import net.md_5.bungee.api.plugin.*;
 
-@SuppressWarnings("ALL")
 public class UpdateChecker {
     private int project = 0;
 
