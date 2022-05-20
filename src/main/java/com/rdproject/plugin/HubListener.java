@@ -2,7 +2,6 @@ package com.rdproject.plugin;
 
 import com.rdproject.*;
 import com.rdproject.util.*;
-import lombok.*;
 import net.md_5.bungee.api.config.*;
 import net.md_5.bungee.api.connection.*;
 import net.md_5.bungee.api.event.*;
@@ -48,7 +47,7 @@ public class HubListener implements Listener {
         }
     }
 
-    private String getRandom(@NonNull List<String> list) {
+    private String getRandom(List<String> list) {
         Random random = new Random();
         synchronized (WaterHub.getPlugin()) {
             return list.get(random.nextInt(list.size()));

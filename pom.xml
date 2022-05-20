@@ -6,7 +6,7 @@
 
     <groupId>com.rdproject</groupId>
     <artifactId>WaterHub</artifactId>
-    <version>1.6-RELEASE</version>
+    <version>1.5-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>WaterHub</name>
