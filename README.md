@@ -12,7 +12,7 @@
 						
 ## Features:
 
-	• BungeeCord Plugin
+	• BungeeCord Plugin.
 	• Flexible Configuration.
 	• Support all forks of BungeeСord.
 	• All Customizable.
