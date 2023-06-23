@@ -9,36 +9,30 @@
 # Support - https://github.com/RDProjectOfficial
 
 # Settings
-prefix: "§8• §bWaterHub §8× "
-no-permission: "§bYou do not have permission!"
-config-reloaded: "§bConfiguration successfully reloaded!"
-permission-reload: "WaterHub.HubReload"
-check-updates: true
+settings:
+  # Checking for updates (it will send a message indicating whether there are any updates or not)
+  check-updates: true
+  # Permission for the command /hubreload
+  permission: "waterhub.reload"
+  # Lobby settings
+  lobby:
+    # The lobby server, on which people will connect
+    server: ""
+    # Servers on which the lobby command will be disabled (including aliases)
+    disabled:
+      - ""
+    # List of aliases you can create (in addition to the existing ones)
+    aliases:
+      - /hub
+      - /lobby
 
 # Messages
-connected-server: '§bYou are connecting to the Lobby...'
-connected-server-random: '§bYou are connecting to the Random Lobby...'
-already-connected: '§bYou are Already Connected to the Lobby!'
-disabled-on-that-server: '§bThis command Disabled on that Server!'
-server-is-null: '§bServer is null! Try again!'
-
-# The Hub Server (Lobby) (Works only if random.toggle = false)
-lobby-server: "lobby"
-
-# Random Module
-random:
-  toggle: false
-  lobby-server:
-    - "lobby"
-    - "lobby1"
-    # - "lobby2"
-    # - "lobby3"
-
-# List of Aliases, you can create besides /hub
-aliases-hub:
-  - /lobby
-  - /hub
-
-# DisabledServer, that is servers which disabled that commands
-disabled-server:
-  - ''
+messages:
+  prefix: "§8• §bWaterHub §8× "
+  no-permission: "§cYou do not have permission!"
+  config-reloaded: "§bConfiguration successfully reloaded!"
+  server:
+    connected: "§bYou are connecting to the Lobby..."
+    already: "§cYou are already connected to the Lobby!"
+    disabled: "§cCommand is disabled on this server!"
+    not-found: "§4Configured lobby server is incorrect!"

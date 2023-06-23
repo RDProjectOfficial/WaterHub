@@ -1,6 +1,11 @@
+# Main
 name: WaterHub
-main: com.rdproject.WaterHub
-version: 1.5-RELEASE
-author: RDProject
-description: Useful Hub System
-website: https://github.com/RDProjectOfficial
+main: com.rdproject.WaterHubPlugin
+version: ${project.version}
+
+# Misc
+description: WaterHub - Hub!
+
+# Other
+author: RDProject Development Team
+website: https://reduceproject.ru
