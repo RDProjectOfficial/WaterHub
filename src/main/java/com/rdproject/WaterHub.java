@@ -64,18 +64,19 @@ public enum WaterHub {
         final File dataFolder = plugin.getDataFolder();
         final String c = "config.yml";
 
-        // Checking if exists dataFolder or not?
+        // Determining whether dataFolder exists or not
         if (!dataFolder.exists()) {
-            dataFolder.mkdir();
+            dataFolder.mkdirs();
         }
-        // чек
 
-        // Creating file with our settings...
+        // Creating file with our name
         file = new File(dataFolder, c);
 
-        // Checking if exists already file or not
+        // Checking if the file exists or not
         if (!file.exists()) {
-            Files.copy(plugin.getResourceAsStream(c), file.toPath());
+            try (InputStream inputStream = plugin.getResourceAsStream(c)) {
+                Files.copy(inputStream, file.toPath());
+            }
         }
 
         // Loading configuration
@@ -99,7 +100,7 @@ public enum WaterHub {
             updatesAvailable = !plugin.getDescription().getVersion().equals(
                     new BufferedReader(new InputStreamReader(inputStream)).readLine());
         } catch (IOException exception) {
-            severe("Spigot API is broken. Contact to plugin's developer!", exception);
+            severe("Spigot API is unavailable/broken. Contact to plugin's developer!", exception);
         }
 
         // Constant
