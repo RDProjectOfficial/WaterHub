@@ -7,8 +7,8 @@
 
 ## Commands:
 
-    • /hubreload - Reloads the configuration (permission: waterhub.reload, which can be changed in the configuration)
-	• /hub - Main Command (you can also set other aliases in the configuration) (no permission required)
+    • /hub - Main Command (you can also set other aliases in the configuration) (no permission required)
+        • /hubreload - Reloads the configuration (permission: waterhub.reload, which can be changed in the configuration)
 						
 ## Features:
 
