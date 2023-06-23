@@ -3,28 +3,34 @@ package com.rdproject.util;
 import java.io.*;
 import java.net.*;
 
+import com.rdproject.WaterHub;
 import lombok.*;
-import net.md_5.bungee.api.plugin.*;
 
+/**
+ * Utility Class
+ *
+ * @author RDProject on 23.06.2023
+ */
 public class UpdateUtil {
 
-    private URL checkURL;
-
+    // Variables
+    private final URL checkURL;
     private String newVersion;
 
-    private final Plugin plugin;
+    // Constant
+    private final String version = WaterHub.PLUGIN.getPlugin().getDescription().getVersion();
 
-    public UpdateUtil(@NonNull final Plugin plugin, final int projectID) {
-        this.plugin = plugin;
-        this.newVersion = plugin.getDescription().getVersion();
-        try {
-            this.checkURL = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + projectID);
-        } catch (MalformedURLException ignored) { }
+    @SneakyThrows
+    public UpdateUtil() {
+        this.newVersion = version;
+        this.checkURL = new URL("https://api.spigotmc.org/legacy/update.php?resource=99826");
     }
 
-    public boolean checkupdate() throws IOException {
-        URLConnection con = this.checkURL.openConnection();
+    @SneakyThrows
+    public boolean checkUpdate() {
+        final URLConnection con = this.checkURL.openConnection();
         this.newVersion = (new BufferedReader(new InputStreamReader(con.getInputStream()))).readLine();
-        return !this.plugin.getDescription().getVersion().equals(this.newVersion);
+        return !version.equals(this.newVersion);
     }
+
 }

@@ -2,55 +2,66 @@ package com.rdproject.plugin;
 
 import com.rdproject.*;
 import com.rdproject.util.*;
-import net.md_5.bungee.api.config.*;
 import net.md_5.bungee.api.connection.*;
 import net.md_5.bungee.api.event.*;
 import net.md_5.bungee.api.plugin.*;
+import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.event.*;
-import java.util.*;
 
+/**
+ * Listener Class
+ *
+ * @author RDProject on 23.06.2023
+ */
 public class HubListener implements Listener {
 
     @EventHandler
-    public void onChat(ChatEvent e) {
-        if (e.isCommand()) {
-            ProxiedPlayer p = (ProxiedPlayer) e.getSender();
-            List<String> commands = WaterHub.config.getStringList("aliases-hub");
-            List<String> denyServers = WaterHub.config.getStringList("disabled-server");
-            List<String> lobbyServer = WaterHub.config.getStringList("random.lobby-server");
-            String lobby = WaterHub.config.getString("lobby-server");
-            if (commands.contains(e.getMessage())) {
-                    if (!denyServers.contains(p.getServer().getInfo().getName())) {
-                        if (!p.getServer().getInfo().getName().equals(getRandom(lobbyServer)) || p.getServer().getInfo().getName().equals(lobby)) {
-                            e.setCancelled(true);
-                            if (WaterHub.config.getBoolean("random.toggle")) {
-                                ServerInfo sv = WaterHub.getPlugin().getProxy().getServerInfo(getRandom(lobbyServer));
-                                if (sv != null) {
-                                    p.connect(sv);
-                                    p.sendMessage(Util.text(WaterHub.getPrefix() + WaterHub.config.getString("connected-server-random")));
-                                } else {
-                                    p.sendMessage(Util.text(WaterHub.getPrefix() + WaterHub.config.getString("server-is-null")));
-                                }
-                            } else {
-                                ServerInfo sv = WaterHub.getPlugin().getProxy().getServerInfo(lobby);
-                                p.connect(sv);
-                                p.sendMessage(Util.text(WaterHub.getPrefix() + WaterHub.config.getString("connected-server")));
-                            }
-                        } else {
-                            p.sendMessage(Util.text(WaterHub.getPrefix() + WaterHub.config.getString("already-connected")));
-                        }
-                    } else {
-                        p.sendMessage(Util.text(WaterHub.getPrefix() + WaterHub.config.getString("disabled-on-that-server")));
-                    }
-                    e.setCancelled(true);
-                }
-        }
-    }
+    public void onChat(ChatEvent event) {
+        // Checking is command or not?
+        if (event.isCommand()) {
+            // Constants
+            final Configuration configuration = WaterHub.PLUGIN.getConfig();
+            final ProxiedPlayer player = (ProxiedPlayer) event.getSender();
 
-    private String getRandom(List<String> list) {
-        Random random = new Random();
-        synchronized (WaterHub.getPlugin()) {
-            return list.get(random.nextInt(list.size()));
+            // Contractions
+            final String s = "messages.server.";
+            final String l = "settings.lobby.";
+
+            // Main code
+            if (configuration.getStringList(l + "aliases").contains(event.getMessage())) {
+                // Constant
+                final String name = player.getServer().getInfo().getName();
+
+                // Checking disabled servers...
+                if (!configuration.getStringList(l + "disabled").contains(name)) {
+                    // Constant
+                    final String lobby = configuration.getString(l + "server");
+
+                    if (lobby == null || lobby.isEmpty()) {
+                        event.setCancelled(true);
+                        ChatUtil.sendMessage(player, configuration.getString(s + "not-found"));
+                        return;
+                    }
+
+                    // Checking player is there in this server or not?
+                    if (!name.equals(lobby)) {
+                        // Connecting to lobby...
+                        player.connect(WaterHub.PLUGIN.getPlugin().getProxy().getServerInfo(lobby));
+
+                        // Sending message to player
+                        ChatUtil.sendMessage(player, configuration.getString(s + "connected"));
+                    } else {
+                        // Sending message to player
+                        ChatUtil.sendMessage(player, configuration.getString(s + "already"));
+                    }
+                } else {
+                    // Sending message to player
+                    ChatUtil.sendMessage(player, configuration.getString(s + "disabled"));
+                }
+
+                // Need to avoid bugs
+                event.setCancelled(true);
+            }
         }
     }
 

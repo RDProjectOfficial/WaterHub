@@ -13,6 +13,11 @@ import javax.net.ssl.*;
 import net.md_5.bungee.api.plugin.*;
 import net.md_5.bungee.config.*;
 
+/**
+ * Utility Class
+ *
+ * @author RDProject on 23.06.2023
+ */
 public class Metrics {
 
     private final Plugin plugin;
