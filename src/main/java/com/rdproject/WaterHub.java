@@ -96,7 +96,7 @@ public enum WaterHub {
 
         // Getting the latest version of the plugin from the Spigot API
         try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=99826").openConnection().getInputStream()) {
-            updatesAvailable = !WaterHub.PLUGIN.getPlugin().getDescription().getVersion().equals(
+            updatesAvailable = !plugin.getDescription().getVersion().equals(
                     new BufferedReader(new InputStreamReader(inputStream)).readLine());
         } catch (IOException exception) {
             severe("Spigot API is broken. Contact to plugin's developer!", exception);
