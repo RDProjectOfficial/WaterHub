@@ -7,13 +7,13 @@
 
 ## Commands:
 
-    • /hubreload - Reloads the configuration (Permission: WaterHub.HubReload)
-	• /hub - Main Command, (Or you can set Other Aliases Into Config)(NoPermission)
+    • /hubreload - Reloads the configuration (permission: waterhub.reload, which can be changed in the configuration)
+	• /hub - Main Command (you can also set other aliases in the configuration) (no permission required)
 						
 ## Features:
 
 	• BungeeCord Plugin
 	• Flexible Configuration.
-	• Support WaterFall, BungeeCord.
+	• Support all forks of BungeeСord.
 	• All Customizable.
 	• Lightweight and minimal performance impact.
