@@ -18,7 +18,7 @@ public class HubListener implements Listener {
 
     @EventHandler(priority = 64)
     public void onChat(@NotNull ChatEvent event) {
-        // Checking is command or not?
+        // Checking is this a command or not?
         if (event.isCommand()) {
             // Constants
             final Configuration configuration = WaterHub.PLUGIN.getConfig();
@@ -38,13 +38,14 @@ public class HubListener implements Listener {
                     // Constant
                     final String lobby = configuration.getString(l + "server");
 
+                    // Checking is available this lobby server or not?
                     if (lobby == null || lobby.isEmpty()) {
                         event.setCancelled(true);
                         ChatUtil.sendMessage(player, configuration.getString(s + "not-found"));
                         return;
                     }
 
-                    // Checking player is there in this server or not?
+                    // Checking is there a player on the server or not?
                     if (!name.equals(lobby)) {
                         // Connecting to lobby...
                         player.connect(WaterHub.PLUGIN.getPlugin().getProxy().getServerInfo(lobby));
