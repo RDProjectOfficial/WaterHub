@@ -17,7 +17,7 @@ settings:
   reload-command-permission: "waterhub.reload" # for /hub-reload
   hub:
     server: "lobby"
-    disabled-servers: # servers where hub command(s) will be disabled to perform
+    disabled-servers: # servers where hub command(s) will be disabled for perform
       - "lobby-1"
       - "lobby-2"
 
