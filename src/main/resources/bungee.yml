@@ -1,0 +1,9 @@
+# Main
+name: WaterHub
+main: com.rdproject.waterhub.WaterHub
+version: ${project.version}
+
+# Misc
+author: RDProject Development Team
+website: https://rdproject.net
+description: WaterHub - Powerful Hub System!

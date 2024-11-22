@@ -1,0 +1,33 @@
+# ░██╗░░░░░░░██╗░█████╗░████████╗███████╗██████╗░██╗░░██╗██╗░░░██╗██████╗░
+# ░██║░░██╗░░██║██╔══██╗╚══██╔══╝██╔════╝██╔══██╗██║░░██║██║░░░██║██╔══██╗
+# ░╚██╗████╗██╔╝███████║░░░██║░░░█████╗░░██████╔╝███████║██║░░░██║██████╦╝
+# ░░████╔═████║░██╔══██║░░░██║░░░██╔══╝░░██╔══██╗██╔══██║██║░░░██║██╔══██╗
+# ░░╚██╔╝░╚██╔╝░██║░░██║░░░██║░░░███████╗██║░░██║██║░░██║╚██████╔╝██████╦╝
+# ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═════╝░
+
+# WaterHub - Powerful Hub System!
+# Author: RDProject Development Team
+settings:
+  check-updates: true
+  hub-command:
+    permission: "waterhub.hub" # for /hub (or /command from aliases)
+    aliases:
+      - "lobby"
+      - "spawn"
+  reload-command-permission: "waterhub.reload" # for /hub-reload
+  hub:
+    server: "lobby"
+    disabled-servers: # servers where hub command(s) will be disabled to perform
+      - "lobby-1"
+      - "lobby-2"
+
+messages:
+  prefix: "§8• §bWaterHub §8× §7"
+  no-permission: "§cYou do not have permission!"
+  only-players: "§cThis command is only for players!"
+  config-reloaded: "§aYou successfully reloaded configuration!"
+  hub:
+    connecting: "You are connecting to the hub..."
+    already-connected: "§cYou are already connected to the hub!"
+    command-disabled: "§cThis command is disabled on this server!"
+    server-not-found: "§4Hub server not found! Please contact the staff!"
