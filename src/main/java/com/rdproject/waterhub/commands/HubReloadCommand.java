@@ -25,7 +25,8 @@ public class HubReloadCommand extends Command {
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
         if (!commandSender.hasPermission(WaterHub.getConfiguration().getString("settings.reload-command-permission"))) {
-            commandSender.sendMessage(ChatUtil.colorWithPrefix("no-permission"));
+            commandSender.sendMessage(ChatUtil.colorWithPrefix("no-permission")
+                    .replace("{permission}", WaterHub.getConfiguration().getString("settings.reload-command-permission")));
             return;
         }
         ChatUtil.COLORED_STRINGS.clear();

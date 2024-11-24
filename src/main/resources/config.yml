@@ -16,18 +16,19 @@ settings:
       - "spawn"
   reload-command-permission: "waterhub.reload" # for /hub-reload
   hub:
-    server: "lobby"
+    server: "hub-1"
     disabled-servers: # servers where hub command(s) will be disabled for perform
-      - "lobby-1"
-      - "lobby-2"
+      - "hub-2"
+      - "hub-3"
 
 messages:
   prefix: "§8• §bWaterHub §8× §7"
-  no-permission: "§cYou do not have permission!"
+  no-permission: "§cYou do not have permission! §8(§4{permission}§8)" # {permission} - required command permission
   only-players: "§cThis command is only for players!"
   config-reloaded: "§aYou successfully reloaded configuration!"
   hub:
-    connecting: "You are connecting to the hub..."
-    already-connected: "§cYou are already connected to the hub!"
-    command-disabled: "§cThis command is disabled on this server!"
-    server-not-found: "§4Hub server not found! Please contact the staff!"
+    # Placeholder: "settings.hub.server" - {hub_server};
+    connecting: "You are connecting to the hub... §8(§7{hub_server}§8)"
+    already-connected: "§cYou are already connected to the hub! §8(§4{hub_server}§8)"
+    command-disabled: "§cThis command is disabled on this server! §8(§4{current_server}§8)" # {current_server} - player's current server
+    server-not-found: "§4Hub server §8(§c{hub_server}§8) §4not found! Please contact the staff!"

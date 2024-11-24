@@ -35,29 +35,30 @@ public class HubCommand extends Command {
 
         ProxiedPlayer player = (ProxiedPlayer) commandSender;
         if (!player.hasPermission(config.getString("settings.hub-command.permission"))) {
-            player.sendMessage(ChatUtil.colorWithPrefix("no-permission"));
+            player.sendMessage(ChatUtil.colorWithPrefix("no-permission")
+                    .replace("{permission}", config.getString("settings.hub-command.permission")));
             return;
         }
 
         String currentServer = player.getServer().getInfo().getName();
         if (config.getStringList("settings.hub.disabled-servers").contains(currentServer)) {
-            player.sendMessage(ChatUtil.colorWithPrefix("hub.command-disabled"));
+            player.sendMessage(ChatUtil.colorWithPrefix("hub.command-disabled").replace("{current_server}", currentServer));
             return;
         }
 
         ServerInfo hubServer = WaterHub.getInstance().getProxy().getServerInfo(config.getString("settings.hub.server"));
         if (hubServer == null) {
-            player.sendMessage(ChatUtil.colorWithPrefix("hub.server-not-found"));
+            player.sendMessage(ChatUtil.colorWithPrefix("hub.server-not-found").replace("{hub_server}", config.getString("settings.hub.server")));
             return;
         }
 
         if (WaterHub.getInstance().getProxy().getServerInfo(currentServer).equals(hubServer)) {
-            player.sendMessage(ChatUtil.colorWithPrefix("hub.already-connected"));
+            player.sendMessage(ChatUtil.colorWithPrefix("hub.already-connected").replace("{hub_server}", hubServer.getName()));
             return;
         }
 
         player.connect(hubServer);
-        player.sendMessage(ChatUtil.colorWithPrefix("hub.connecting"));
+        player.sendMessage(ChatUtil.colorWithPrefix("hub.connecting").replace("{hub_server}", hubServer.getName()));
     }
 
 }
